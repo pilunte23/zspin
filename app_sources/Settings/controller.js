@@ -1,7 +1,7 @@
 'use strict';
 
-app.controller('SettingsCtrl', ['$scope', '$translate', 'DOMKeyboard', 'gamepads', 'settings', 'inputs', 'toastr', 'zspin', 'zip', 'fs',
-  function($scope, $tr, DOMKeyboard, gamepads, settings, inputs, toastr, zspin, zip, fs) {
+app.controller('SettingsCtrl', ['$scope', '$translate', 'DOMKeyboard', 'gamepads', 'settings', 'inputs', 'toastr', 'zspin', 'zip', 'fs', 'retroachievements',
+  function($scope, $tr, DOMKeyboard, gamepads, settings, inputs, toastr, zspin, zip, fs, retroachievements ) {
 
     const dialog = require('electron').remote.dialog;
     const shell = require('electron').shell;
@@ -21,6 +21,37 @@ app.controller('SettingsCtrl', ['$scope', '$translate', 'DOMKeyboard', 'gamepads
       {'name':'fullscreen', 'desc': 'Toggle fullscreen'},
       {'name':'devtools',   'desc': 'Show the developer tools window'},
     ];
+
+    //RetroAchievements
+    var checkRA = undefined;
+
+    $scope.RASelected = function(boolean) {
+      if (boolean) {
+        $scope.sortedBinds.push({'name':'retro-achievements', 'desc': 'Show retro-achievments account information'})
+      }else
+      {   
+        $scope.sortedBinds = $scope.sortedBinds.filter(function(el) {
+          if(el.name == 'retro-achievements'){
+              $scope.clear(el.name)
+          }         
+          return el.name !== 'retro-achievements';
+        });
+
+      }
+    };
+
+    $scope.checkApiRA = function() {
+       retroachievements.GetUserSummary($scope.userRA,$scope.apiKeyRA, function(response) {
+          if (response.data == null){
+            toastr.warning($tr.instant('User or ApiKey Incorrect'));
+        } else{
+            toastr.success($tr.instant('Retro-achievements OK'));
+        }
+      }
+      ,
+      function(response){ toastr.success($tr.instant('Retroachievement Offline'))})
+    };
+
 
     var focus = undefined;
     $scope.bindinfo = [];
@@ -57,6 +88,7 @@ app.controller('SettingsCtrl', ['$scope', '$translate', 'DOMKeyboard', 'gamepads
 
     // Restore local settings to saved state
     $scope.reset = function() {
+      $scope.RASelected();
       angular.copy(settings.$obj, $scope.settings);
     };
 

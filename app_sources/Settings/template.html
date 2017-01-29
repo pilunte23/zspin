@@ -81,6 +81,40 @@
   </div>
 
   <hr/>
+
+  <!-- RETRO ACHIEVEMENTS -->
+
+  <h3 translate>Retro-Achievements</h3>
+  <div class="row">
+    <div class="five columns">
+      <h5 translate>Active Retro-achievements (Internet require)</h5>
+    </div>
+    <div class="seven columns">
+      <input type="checkbox" ng-model="settings.checkRA" ng-change="RASelected(settings.checkRA,$index)"></label>
+    </div>
+  </div>
+ <div class="row" ng-if="settings.checkRA">
+    <div class="five columns">
+      <h5 translate>User</h5>
+    </div>
+    <div class="seven columns">
+      <input type='text' ng-model='settings.userRA'/>
+      <a href="#retroachievements">Retroachievement</a>
+    </div>
+  </div>
+  <div class="row" ng-if="settings.checkRA">
+    <div class="five columns">
+      <h5 translate>Api Key</h5>
+    </div>
+    <div class="seven columns">
+      <input type='text' ng-model='settings.apiKeyRA' />
+      <button ng-click="checkApiRA();">check Api</button>
+    </div>
+  </div>
+
+  <hr/>
+
+
   <!-- KEYS -->
 
   <h3 translate>Keys</h3>
@@ -136,6 +170,7 @@
   </div>
 
   <hr/>
+
   <!-- FOLDERS -->
 
   <h3 translate>View folders</h3>
@@ -147,6 +182,8 @@
   </div>
 
   <hr/>
+
+
   <!-- FACTORY RESET -->
 
   <h3 translate>Factory Reset</h3>

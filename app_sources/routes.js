@@ -56,6 +56,12 @@ app.config(['$routeProvider',
       templateUrl: 'Settings/template.html',
     });
 
+    // retro-achievements menu
+    $routeProvider.when('/retroachievements', {
+      controller: 'RetroAchievementsCtrl',
+      templateUrl: 'RetroAchievements/template.html',
+    });
+
     // error page
     $routeProvider.when('/error', {
       controller: 'ErrorCtrl',

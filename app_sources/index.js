@@ -81,4 +81,9 @@ app.run(['$rootScope', 'zspin', '$location', function($rootScope, zspin, $locati
     $location.url('/debug');
   });
 
+  // Create retro-achievements shortcut
+  $rootScope.$on('input:retro-achievements', function () {
+    $location.url('/retroachievements');
+  });
+
 }]);
