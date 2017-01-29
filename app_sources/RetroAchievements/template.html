@@ -5,10 +5,11 @@
   <div class="row">
     <div class="twelve columns">
       <h5 translate>MemberSince : {{GetUserSummary.MemberSince}}</h5>
-    </div>
-    <div class="twelve columns">
       <h5 translate>LastLogin : {{GetUserSummary.LastLogin}}</h5>
     </div>
   </div>
   <pre>{{GetUserSummary}}</pre>
+  <ul>
+	 <li ng-repeat="game in GetUserSummary.RecentlyPlayed"><img ng-src="{{baseUrl}}{{game.ImageIcon}}" style="height:96px; width:96px;"/>{{game.Title}}</li>
+  </ul>
 </div>
