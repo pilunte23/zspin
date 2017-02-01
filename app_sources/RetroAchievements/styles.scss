@@ -1,10 +1,16 @@
-body.retro {
-  background-color: #ffffff;
-}
 
 #Retro {
   position: fixed;
   top: 0; bottom: 0;
   left: 0; right: 0;
-  background-color: #fff;
+  color: #fff;
+  background: white(0.5);
+};
+
+@function black($opacity) {
+  @return rgba(black, $opacity)
+};
+
+@function white($opacity) {
+  @return rgba(white, $opacity)
 }

@@ -36,7 +36,7 @@ app.factory('retroachievements', ['$http',
 
       //User Information
       retroachievements.GetUserSummary = function(user,apiKey,numRecentGames,callback){
-         $http.get(baseURL + 'API_GetUserSummary.php?z='+user+'&y='+apiKey+'&u='+user+'g='+numRecentGames).then(function(response){callback(response)});     
+         $http.get(baseURL + 'API_GetUserSummary.php?z='+user+'&y='+apiKey+'&u='+user+'&g='+numRecentGames).then(function(response){callback(response)});     
       };
       retroachievements.GetUserRankAndScore = function(user,apiKey,callback){
          $http.get(baseURL + 'API_GetUserRankAndScore.php?z='+user+'&y='+apiKey+'&u='+user).then(function(response){callback(response)});     
@@ -51,7 +51,7 @@ app.factory('retroachievements', ['$http',
       };
 
      retroachievements.GetUserProgress = function(user,apiKey,gameList,callback){
-         $http.get(baseURL + 'API_GetUserProgress.php?z='+user+'&y='+apiKey+'&u='+user+"&i"+gameList).then(function(response){callback(response)});     
+         $http.get(baseURL + 'API_GetUserProgress.php?z='+user+'&y='+apiKey+'&u='+user+"&i="+gameList).then(function(response){callback(response)});     
       };
 
       console.log('retroachievements - ready');
