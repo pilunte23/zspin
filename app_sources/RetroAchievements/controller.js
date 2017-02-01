@@ -17,13 +17,19 @@ app.controller('RetroAchievementsCtrl', ['$scope','retroachievements','settings'
          });
 
          var gameListClean = gameList.substring(0, gameList.length-1);
-         
+         var gameStat =[];
          retroachievements.GetUserProgress(userRA,apiKeyRA,gameListClean, function(progressdata) {
            $scope.GetUserProgress =progressdata.data
-         });
+           _.forEach(userdata.data.RecentlyPlayed, function(value, key) {
 
-         
-    
+              _.forEach(progressdata.data, function(value2, key2) {
+                if (value.GameID == key2){
+                   gameStat.push(_.merge(value2, value));             
+                }
+              });
+         });
+         });
+         $scope.gameStat=gameStat;
       });
 
   }

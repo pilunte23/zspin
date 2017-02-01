@@ -14,14 +14,13 @@
 
  <br>
 
-  <div class="row" ng-repeat="game in GetUserSummary.RecentlyPlayed">
+  <div class="row" ng-repeat="game in gameStat">
     <div class="two columns">
        <img ng-src="{{baseUrl}}{{game.ImageIcon}}" style="height:96px; width:96px;"/>
     </div>   
     <div class="ten columns">
-       <h5 translate>{{game.Title}}</h5>
-       <div  ng-repeat="progress in GetUserProgress">
-         <!--<div ng-if="{{game.GameID}}==={{progress.key}}">{{progress.value.NumAchieved}}</div> -->
+       <h3 translate>{{game.Title}}</h3>
+       <div>{{game.NumAchieved}}/{{game.NumAchievedHardcore}}/{{game.NumPossibleAchievements}}</div>   
        </div>
     </div>
     <pre></pre>
@@ -29,5 +28,5 @@
 
    <pre>{{GetUserSummary}}</pre>
    <pre>{{GetUserProgress}}</pre>
-   <pre>{{lodashTest}}</pre>
+   <pre>{{gameStat}}</pre>
 </div>
