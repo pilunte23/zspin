@@ -11,6 +11,7 @@ var app = angular.module('app', [
   'ngAnimate',
   'pascalprecht.translate',
   'piwik',
+  'lodash',
 ]);
 
 // =========== resize provider

@@ -1,6 +1,6 @@
 'use strict';
-app.controller('RetroAchievementsCtrl', ['$scope','retroachievements','settings', 
-  function($scope, retroachievements,settings) { 
+app.controller('RetroAchievementsCtrl', ['$scope','retroachievements','settings', '_',
+  function($scope, retroachievements,settings,_) { 
     
       var userRA =$scope.userRA = settings.$obj.userRA;
       var apiKeyRA = settings.$obj.apiKeyRA;
@@ -21,9 +21,10 @@ app.controller('RetroAchievementsCtrl', ['$scope','retroachievements','settings'
          retroachievements.GetUserProgress(userRA,apiKeyRA,gameListClean, function(progressdata) {
            $scope.GetUserProgress =progressdata.data
          });
+
+         
     
       });
-
 
   }
 ]);
