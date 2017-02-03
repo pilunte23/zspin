@@ -5,27 +5,29 @@
       <img ng-src="{{baseUrl}}{{GetUserSummary.UserPic}}" alt="" />
     </div>   
     <div class="ten columns">
-      <h3 translate>{{userRA}}</h3>
-      <h5 translate>MemberSince : {{GetUserSummary.MemberSince}}</h5>
-      <h5 translate>LastLogin : {{GetUserSummary.LastLogin}}</h5>
+      <div class="row">
+         <div >{{userRA}} {{GetUserSummary.TotalPoints}} points</div>
+          <h5 translate>MemberSince : {{GetUserSummary.MemberSince}}</h5>
+          <h5 translate>LastLogin : {{GetUserSummary.LastLogin}}</h5>
+      </div>
     </div>
   </div>
   <div class="row">
-
  <br>
 
   <div class="row" ng-repeat="game in gameStat">
     <div class="two columns">
-       <img ng-src="{{baseUrl}}{{game.ImageIcon}}" style="height:96px; width:96px;"/>
+       <img class="imgGame" ng-src="{{baseUrl}}{{game.ImageIcon}}"/>
     </div>   
     <div class="ten columns">
        <h3 translate>{{game.Title}}</h3>
-       <div>{{game.NumAchieved}}/{{game.NumAchievedHardcore}}/{{game.NumPossibleAchievements}}</div>   
-       </div>
+       <div>
+         <div class="two columns">Normal :</div><div class="ten columns"  ><progress id="NumAchieved" value="{{game.NumAchieved}}" max="{{game.NumPossibleAchievements}}"></progress>  {{game.NumAchieved}} / {{game.NumPossibleAchievements}}</div>
+         <pre></pre><pre></pre>
+         <div class="two columns">Hardcore :</div><div class="ten columns"  ><progress id="NumAchievedHardcore" value="{{game.NumAchievedHardcore}}" max="{{game.NumPossibleAchievements}}"></progress>  {{game.NumAchievedHardcore}} / {{game.NumPossibleAchievements}}</div>
+       </div>   
     </div>
-    <pre></pre>
   </div>
-
    <pre>{{GetUserSummary}}</pre>
    <pre>{{GetUserProgress}}</pre>
    <pre>{{gameStat}}</pre>

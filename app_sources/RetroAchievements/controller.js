@@ -30,6 +30,7 @@ app.controller('RetroAchievementsCtrl', ['$scope','retroachievements','settings'
          });
          });
          $scope.gameStat=gameStat;
+         console.log(userdata.data);
       });
 
   }

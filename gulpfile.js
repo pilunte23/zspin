@@ -103,7 +103,7 @@ var vendors = {
     'bower_components/gsap/src/uncompressed/jquery.gsap.js',
     'bower_components/json-formatter/dist/json-formatter.js',
     'bower_components/angular-toastr/dist/angular-toastr.tpls.js',
-    'bower_components/jplayer/dist/jplayer/jquery.jplayer.js',
+    'bower_components/jplayer/dist/jplayer/jquery.jplayer.js'
   ],
   'styles': [
     'bower_components/skeleton/css/normalize.css',
@@ -111,7 +111,7 @@ var vendors = {
     'bower_components/angular-toastr/dist/angular-toastr.css',
   ],
   'fonts': [
-   // 'bower_components/bootstrap/dist/fonts/*', // * preserve dir structure
+
    'app_statics/*.ttf',
   ]
 };
