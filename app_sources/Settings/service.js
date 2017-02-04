@@ -31,6 +31,7 @@ app.factory('settings', [
         'fullscreen': {'0': {'source': 'keyboard', 'combo': 'alt+enter'}},
         'devtools':   {'0': {'source': 'keyboard', 'combo': 'ctrl+d'}},
         'devmenu':    {'0': {'source': 'keyboard', 'combo': 'ctrl+shift+d'}},
+        'retro-achievements':    {'0': {'source': 'keyboard', 'combo': 'shift+r'}},
       },
       hsPath: '',
       cachePath: 'zspin.cache',

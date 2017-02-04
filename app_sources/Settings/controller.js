@@ -23,7 +23,9 @@ app.controller('SettingsCtrl', ['$scope', '$translate', 'DOMKeyboard', 'gamepads
     ];
 
     //RetroAchievements
-    var checkRA = undefined;
+    var checkRA = settings.$obj.checkRA;
+
+  
 
     $scope.RASelected = function(boolean) {
       if (boolean) {
@@ -39,6 +41,7 @@ app.controller('SettingsCtrl', ['$scope', '$translate', 'DOMKeyboard', 'gamepads
 
       }
     };
+
 
     $scope.checkApiRA = function() {
        retroachievements.GetUserSummary($scope.userRA,$scope.apiKeyRA, function(response) {
@@ -183,6 +186,8 @@ app.controller('SettingsCtrl', ['$scope', '$translate', 'DOMKeyboard', 'gamepads
       settings.deleteSettingsFile();
       zspin.reloadApp();
     };
+
+    $scope.RASelected(checkRA);
 
     if ($scope.settings.firstRun) {
       toastr.info($tr.instant("Welcome to Zspin !<br/>Please configure me !"), {
