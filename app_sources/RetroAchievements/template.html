@@ -3,32 +3,38 @@
   <div class="row">
     <div class="two columns">
       <img ng-src="{{baseUrl}}{{GetUserSummary.UserPic}}" alt="" />
-    </div>   
+    </div>
     <div class="ten columns">
       <div class="row">
-         <div >{{userRA}} {{GetUserSummary.TotalPoints}} points</div>
-          <h5 translate>MemberSince : {{GetUserSummary.MemberSince}}</h5>
-          <h5 translate>LastLogin : {{GetUserSummary.LastLogin}}</h5>
+        <div>{{userRA}} {{GetUserSummary.TotalPoints}} points</div>
+        <h5 translate>MemberSince : {{GetUserSummary.MemberSince}}</h5>
+        <h5 translate>LastLogin : {{GetUserSummary.LastLogin}}</h5>
       </div>
     </div>
   </div>
   <div class="row">
- <br>
-
-  <div class="row" ng-repeat="game in gameStat">
-    <div class="two columns">
-       <img class="imgGame" ng-src="{{baseUrl}}{{game.ImageIcon}}"/>
-    </div>   
-    <div class="ten columns">
-       <h3 translate>{{game.Title}}</h3>
-       <div>
-         <div class="two columns">Normal :</div><div class="ten columns"  ><progress id="NumAchieved" value="{{game.NumAchieved}}" max="{{game.NumPossibleAchievements}}"></progress>  {{game.NumAchieved}} / {{game.NumPossibleAchievements}}</div>
-         <pre></pre><pre></pre>
-         <div class="two columns">Hardcore :</div><div class="ten columns"  ><progress id="NumAchievedHardcore" value="{{game.NumAchievedHardcore}}" max="{{game.NumPossibleAchievements}}"></progress>  {{game.NumAchievedHardcore}} / {{game.NumPossibleAchievements}}</div>
-       </div>   
+    <br>
+    <div class="row" ng-repeat="game in gameStat">
+      <div class="two columns">
+        <img class="imgGame" ng-src="{{baseUrl}}{{game.ImageIcon}}" />
+      </div>
+      <div class="ten columns">
+        <div class="row">
+          <div><h3 translate>{{game.Title}}</h3></div>
+          <div class="row">
+            <div class="two columns">Normal :</div>
+            <div class="four columns"><progress id="NumAchieved" class="silver" value="{{game.NumAchieved}}" max="{{game.NumPossibleAchievements}}"></progress> {{game.NumAchieved}}/{{game.NumPossibleAchievements}} Achievements</div>
+            <div class="two columns">Normal :</div>
+            <div class="four columns"><progress id="ScoreAchieved" class="silver" value="{{game.ScoreAchieved}}" max="{{game.PossibleScore}}"></progress> {{game.ScoreAchieved}}/{{game.PossibleScore}} Points</div>
+          </div>
+          <div class="row">
+            <div class="two columns">Hardcore :</div>
+            <div class="four columns"><progress id="NumAchievedHardcore" class="gold" value="{{game.NumAchievedHardcore}}" max="{{game.NumPossibleAchievements}}"></progress> {{game.NumAchievedHardcore}}/{{game.NumPossibleAchievements}} Achievements</div>
+            <div class="two columns">Hardcore :</div>
+            <div class="four columns"><progress id="ScoreAchievedHardcore" class="gold" value="{{game.ScoreAchievedHardcore}}" max="{{game.PossibleScore}}"></progress> {{game.ScoreAchievedHardcore}}/{{game.PossibleScore}} Points</div>
+          </div>
+        </div>
+      </div>
+      <pre></pre>
     </div>
   </div>
-   <pre>{{GetUserSummary}}</pre>
-   <pre>{{GetUserProgress}}</pre>
-   <pre>{{gameStat}}</pre>
-</div>
