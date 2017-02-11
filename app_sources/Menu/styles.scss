@@ -4,3 +4,20 @@
   left: 0; right: 0;
   background-color: #000;
 }
+
+.ngdialog-content {
+  -webkit-animation: ngdialog-flyin .5s;
+  animation: ngdialog-flyin .5s;
+  //background: #f0f0f0;
+  border-radius: 5px;
+  //color: #444;
+  font-family: 'Helvetica',sans-serif;
+  font-size: 1.1em;
+  line-height: 1.5em;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 1em;
+  position: relative;
+  //width: 450px;
+  opacity: 0;
+}

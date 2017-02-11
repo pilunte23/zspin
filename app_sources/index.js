@@ -12,6 +12,7 @@ var app = angular.module('app', [
   'pascalprecht.translate',
   'piwik',
   'lodash',
+  'ngDialog',
 ]);
 
 // =========== resize provider

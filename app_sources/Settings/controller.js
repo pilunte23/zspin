@@ -29,7 +29,7 @@ app.controller('SettingsCtrl', ['$scope', '$translate', 'DOMKeyboard', 'gamepads
 
     $scope.RASelected = function(boolean) {
       if (boolean) {
-        $scope.sortedBinds.push({'name':'retro-achievements', 'desc': 'Show retro-achievments account information'})
+        $scope.sortedBinds.push({'name':'retroachievements', 'desc': 'Show retro-achievments account information'})
       }else
       {   
         $scope.sortedBinds = $scope.sortedBinds.filter(function(el) {

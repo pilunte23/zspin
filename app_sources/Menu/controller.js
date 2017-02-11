@@ -1,7 +1,7 @@
 'use strict';
 
-app.controller('MenuCtrl', ['$scope', '$routeParams', '$location', '$timeout', 'fs', 'menus', 'settings', 'inputs', 'zspin', 'themes', 'dataServer',
-  function($scope, $routeParams, $location, $timeout, fs, menus, settings, inputs, zspin, themes, dataServer) {
+app.controller('MenuCtrl', ['$scope', '$routeParams', '$location', '$timeout', 'fs', 'menus', 'settings', 'inputs', 'zspin', 'themes', 'dataServer','ngDialog',
+  function($scope, $routeParams, $location, $timeout, fs, menus, settings, inputs, zspin, themes, dataServer,ngDialog) {
 
     //  - requires
     const $fs = require('fs');
@@ -68,6 +68,27 @@ app.controller('MenuCtrl', ['$scope', '$routeParams', '$location', '$timeout', '
         dataServer.infos = $scope.infos[$scope.curEntry];
       }, 500);
     };
+    /***************************** Retro Achievement *************************/
+    var retroShow = false;
+    $scope.showAModal = function() {
+      if(retroShow){
+        ngDialog.closeAll();
+        retroShow = false;
+      }else{
+         ngDialog.open({ 
+          template: 'RetroAchievements/template.html',
+          controller: 'RetroAchievementsCtrl',
+          showClose: false,
+          closeByNavigation: true,
+          overlay: false,
+          width: '65%',
+          height: '90%'
+         });
+        retroShow = true;
+      }
+    };
+
+    binds.retroachievements = $scope.$on('input:retroachievements', $scope.showAModal);
 
     /***************************** Wheel Control *****************************/
 
@@ -132,7 +153,7 @@ app.controller('MenuCtrl', ['$scope', '$routeParams', '$location', '$timeout', '
     binds.right = $scope.$on('input:right', $scope.nextLetter);
     binds.enter = $scope.$on('input:enter', $scope.enter);
     binds.back = $scope.$on('input:back', $scope.back);
-
+    
     /*************************** Database loading ****************************/
 
     // Load menu database

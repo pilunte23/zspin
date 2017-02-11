@@ -34,7 +34,8 @@
     "jplayer": "~2.9.2",
     "angular-translate-loader-static-files": "~2.7.2",
     "angular-translate": "~2.7.2",
-    "lodash":"~4.17.3"
+    "lodash":"~4.17.3",
+    "ng-dialog": "~0.6.6"
   },
   "resolutions": {
     "angular": "1.3.11"

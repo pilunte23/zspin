@@ -103,12 +103,16 @@ var vendors = {
     'bower_components/gsap/src/uncompressed/jquery.gsap.js',
     'bower_components/json-formatter/dist/json-formatter.js',
     'bower_components/angular-toastr/dist/angular-toastr.tpls.js',
-    'bower_components/jplayer/dist/jplayer/jquery.jplayer.js'
+    'bower_components/jplayer/dist/jplayer/jquery.jplayer.js',
+    'bower_components/ng-dialog/js/ngDialog.js'
   ],
   'styles': [
     'bower_components/skeleton/css/normalize.css',
     'bower_components/json-formatter/dist/json-formatter.css',
     'bower_components/angular-toastr/dist/angular-toastr.css',
+    'bower_components/ng-dialog/css/ngDialog-theme-default.css',
+    'bower_components/ng-dialog/css/ngDialog.css',
+    'ngDialog-theme-default.css'
   ],
   'fonts': [
 
